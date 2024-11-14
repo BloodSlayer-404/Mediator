@@ -1,0 +1,155 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > PokemonCenter</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: PokemonCenter (org.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PokemonCenter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (14/14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;
+<b class="fc">&nbsp;public class PokemonCenter implements PokemonCenterMediator{</b>
+&nbsp;
+<b class="fc">&nbsp;    private PokePC pokePC = new PokePC();</b>
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String requestHealing(Trainer trainer) {
+<b class="fc">&nbsp;        return &quot;Pokémon Center: Healing Pokémon from &quot; + trainer.getName() +</b>
+<b class="fc">&nbsp;                &quot;\n&quot; + trainer.getName() + &quot; now has all his Pokémon in perfect condition.&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String requestPotionPurchase(Trainer trainer, int amount) {
+<b class="fc">&nbsp;        return &quot;Pokémon Center: &quot; + trainer.getName() + &quot; has bought &quot; + amount + &quot; potions.&quot;;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String requestInfo(Trainer trainer) {
+<b class="fc">&nbsp;        return &quot;Pokémon Center: Providing information to &quot; + trainer.getName() +</b>
+&nbsp;                &quot;\nInformation of the day: Train your Pokémon with love and patience!&quot;;
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String requestTeamManagement(Trainer trainer, Pokemon pokemon, boolean add) {
+<b class="fc">&nbsp;        return add ? pokePC.storePokemon(trainer, pokemon) : pokePC.retrievePokemon(trainer, pokemon);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public String requestPokemonTrade(Trainer trainer1, Pokemon pokemon1, Trainer trainer2, Pokemon pokemon2) {
+<b class="fc">&nbsp;        trainer1.removePokemon(pokemon1);</b>
+<b class="fc">&nbsp;        trainer2.addPokemon(pokemon1);</b>
+<b class="fc">&nbsp;        trainer2.removePokemon(pokemon2);</b>
+<b class="fc">&nbsp;        trainer1.addPokemon(pokemon2);</b>
+<b class="fc">&nbsp;        return &quot;Pokémon Center: Carrying out exchange between &quot; + trainer1.getName() + &quot; and &quot; + trainer2.getName() +</b>
+<b class="fc">&nbsp;                &quot;\nExchange completed: &quot; + trainer1.getName() + &quot; now has a &quot; + pokemon2.getName() +</b>
+<b class="fc">&nbsp;                &quot; and &quot; + trainer2.getName() + &quot; now has a &quot; + pokemon1.getName();</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-11-14 01:52</div>
+</div>
+</body>
+</html>
